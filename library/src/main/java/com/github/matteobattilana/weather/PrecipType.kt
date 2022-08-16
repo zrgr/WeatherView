@@ -1,5 +1,7 @@
 package com.github.matteobattilana.weather
 
+import android.graphics.Color
+
 /**
  * Created by Mitchell on 7/6/2017.
  */
@@ -24,6 +26,8 @@ enum class PrecipType : WeatherData {
 
     @Suppress("LeakingThis") // enum types are actually final, this warning is incorrect. Check if fixed in next plugin update
     override val precipType: PrecipType = this
+
+    override val colour: Int = Color.BLUE
 }
 
 private object EnumConstants {

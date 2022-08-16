@@ -2,6 +2,7 @@ package com.github.matteobattilana.weather
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.graphics.Rect
 import android.util.AttributeSet
 import android.widget.FrameLayout
@@ -58,12 +59,18 @@ class WeatherView(context: Context, attrs: AttributeSet?) : FrameLayout(context,
             confettoInfo.precipType = value
         }
 
+    var colour: Int = Color.BLUE
+        set(value) {
+            field = value
+            confettoInfo.colour = value
+        }
+
     fun setCustomBitmap(bitmap: Bitmap){
         confettoInfo.precipType = PrecipType.CUSTOM
         confettoInfo.customBitmap = bitmap
     }
 
-    private val confettoInfo = ConfettoInfo(PrecipType.CLEAR, 1.0f)
+    private val confettoInfo = ConfettoInfo(PrecipType.CLEAR, 1.0f,null,  colour)
 
     init {
         confettiSource = MutableRectSource(0, 0)
@@ -83,6 +90,7 @@ class WeatherView(context: Context, attrs: AttributeSet?) : FrameLayout(context,
         precipType = weatherData.precipType
         emissionRate = weatherData.emissionRate
         speed = weatherData.speed
+        colour = weatherData.colour
         resetWeather()
     }
 

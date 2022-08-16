@@ -49,7 +49,7 @@ class MotionBlurBitmapConfetto(val confettoInfo: ConfettoInfo) : Confetto() {
 
                     paint.strokeWidth = confettoInfo.scaleFactor;
                     paint.shader = LinearGradient(x1, y1, x2, y2,
-                            intArrayOf(Color.TRANSPARENT, Color.WHITE, Color.WHITE, Color.TRANSPARENT),
+                            intArrayOf(Color.TRANSPARENT, confettoInfo.colour, Color.WHITE, Color.TRANSPARENT),
                             floatArrayOf(0f, 0.45f, 0.55f, 1f),
                             Shader.TileMode.CLAMP)
 

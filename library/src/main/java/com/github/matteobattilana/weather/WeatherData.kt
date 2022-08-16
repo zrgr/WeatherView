@@ -7,4 +7,5 @@ interface WeatherData {
     val precipType: PrecipType
     val emissionRate: Float
     val speed: Int
+    val colour: Int
 }
